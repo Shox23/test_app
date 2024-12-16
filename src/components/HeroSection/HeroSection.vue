@@ -3,28 +3,28 @@ import FilledButton from "../FilledButton/FilledButton.vue";
 </script>
 
 <template>
-  <section class="hero-section">
+  <section class="hero">
     <div class="container">
-      <div class="hero-section__grid">
-        <div class="hero-section__cell">
+      <div class="hero__grid">
+        <div class="hero__cell">
           <img
-            class="hero-section__cell__img"
+            class="hero__cell__img"
             src="/images/first-cell.jpg"
             alt="background"
           />
-          <div class="hero-section__cell__btn">
+          <div class="hero__cell__btn">
             <FilledButton>
               <p>More Bonuses</p>
             </FilledButton>
           </div>
         </div>
-        <div class="hero-section__cell">
+        <div class="hero__cell">
           <img
-            class="hero-section__cell__img"
+            class="hero__cell__img"
             src="/images/second-cell.jpg"
             alt="background"
           />
-          <div class="hero-section__cell__btn">
+          <div class="hero__cell__btn">
             <FilledButton type="blue">
               <p>Invite</p>
             </FilledButton>
@@ -39,7 +39,7 @@ import FilledButton from "../FilledButton/FilledButton.vue";
 </template>
 
 <style lang="scss">
-.hero-section {
+.hero {
   &__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

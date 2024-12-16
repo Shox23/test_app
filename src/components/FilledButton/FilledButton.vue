@@ -14,21 +14,26 @@ const { type = "orange" } = defineProps<FilledButtonProps>();
 
 <style lang="scss">
 .filled-btn {
+  width: max-content;
   border: none;
   position: relative;
   background: linear-gradient(to right, #f7cb40, #ddad1c);
-  padding: 0 16px;
   display: flex;
   align-items: center;
   height: 26px;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
+  height: 30px;
   border-radius: $base-radius;
-  padding: 10px 20px;
+  padding: 0 24px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
 
   &:hover {
     transform: scale(1.05);
@@ -36,6 +41,18 @@ const { type = "orange" } = defineProps<FilledButtonProps>();
 
   &:active {
     transform: scale(0.95);
+  }
+
+  &::after {
+    content: '';
+    right: 5px;
+    transform: rotate(22deg);
+    top: 0;
+    position: absolute;
+    width: 8px;
+    height: 5px;
+    border-radius: 100%;
+    background: #ffeeba;
   }
 
   &__top-outline {
@@ -59,6 +76,17 @@ const { type = "orange" } = defineProps<FilledButtonProps>();
     background: #7a5d00;
     z-index: -1;
   }
+
+  p {
+    font-family: $accent-font;
+    font-size: 16px;
+    text-stroke: 0.3px #1F1F1F;
+    -webkit-text-stroke: 0.3px #1F1F1F;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
+  }
 }
 
 .filled-btn.blue {
@@ -70,6 +98,10 @@ const { type = "orange" } = defineProps<FilledButtonProps>();
 
   .filled-btn__bottom-outline {
     background: #115388;
+  }
+
+  &::after {
+    background: #bee3ff;
   }
 }
 </style>
